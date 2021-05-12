@@ -70,5 +70,27 @@ function addPagination(list) {
     });
 }
 
+/*
+`addSearchComponent` function
+This function will create and insert a search bar
+*/
+
+function addSearchComponent() {
+    let header = document.querySelector("header");
+    let searchBar = `
+   <label for="search" class="student-search">
+  <span>Search by name</span>
+  <input id="search" placeholder="Search by name...">
+  <button id="submit" type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+</label>
+   `;
+
+    header.insertAdjacentHTML("beforeend", searchBar);
+}
+
+const search = document.querySelector("#search");
+const submit = document.querySelector("#submit");
+
 showPage(data, 1);
 addPagination(data);
+addSearchComponent();
