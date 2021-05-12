@@ -88,9 +88,50 @@ function addSearchComponent() {
     header.insertAdjacentHTML("beforeend", searchBar);
 }
 
-const search = document.querySelector("#search");
-const submit = document.querySelector("#submit");
+/*
+`searchFunction` function
+This function will perform a search and display match items
+*/
+
+function searchFunction(searchInput, array) {
+    let matchedItems = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (
+            searchInput.value.length != 0 &&
+            (array[i].name.first
+                .toLowerCase()
+                .includes(searchInput.value.toLowerCase()) ||
+                array[i].name.last
+                    .toLowerCase()
+                    .includes(searchInput.value.toLowerCase()))
+        ) {
+            matchedItems.push(array[i]);
+        }
+    }
+
+    showPage(matchedItems, 1);
+    addPagination(matchedItems);
+}
 
 showPage(data, 1);
 addPagination(data);
 addSearchComponent();
+const search = document.querySelector("#search");
+const submit = document.querySelector("#submit");
+
+/**
+ * Event listeners for buttons - Invokes search function in the body of the callbacks in the event listeners below
+ */
+
+/* submit listener */
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    searchFunction(search, data);
+});
+
+/* submit listener */
+search.addEventListener("keyup", () => {
+    searchFunction(search, data);
+});
