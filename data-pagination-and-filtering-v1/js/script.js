@@ -8,6 +8,7 @@ function showPage(list, page) {
     let endIndex = page * 9;
     let studentList = document.querySelector(".student-list");
 
+    // Removes any existing student items that might have been displayed previously
     studentList.innerHTML = "";
 
     for (let i = 0; i < list.length; i++) {
