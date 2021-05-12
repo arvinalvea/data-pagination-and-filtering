@@ -73,6 +73,8 @@ function addPagination(list) {
             activeButton.className = "";
             e.target.className = "active";
             showPage(list, e.target.textContent);
+        } else {
+            return;
         }
     });
 
