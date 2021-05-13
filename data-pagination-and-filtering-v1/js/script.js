@@ -94,9 +94,12 @@ This function will perform a search and display match items
 */
 
 function searchFunction(searchInput, array) {
+    let header = document.querySelector("header");
+    let noResults = document.querySelector(".no-results");
     let matchedItems = [];
 
     for (let i = 0; i < array.length; i++) {
+        noResults.style.display = "none";
         if (
             searchInput.value.length != 0 &&
             (array[i].name.first
@@ -110,10 +113,13 @@ function searchFunction(searchInput, array) {
         }
     }
 
+    if (matchedItems.length === 0) {
+        noResults.style.display = "block";
+    }
+
     showPage(matchedItems, 1);
     addPagination(matchedItems);
 }
-
 showPage(data, 1);
 addPagination(data);
 addSearchComponent();

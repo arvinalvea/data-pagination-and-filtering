@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Student List</title>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Student List</title>
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <h2>Students</h2>
 
-  <div class="page">
-
-    <header class="header">
-      <h2>Students</h2>
-      
-        <!-- Extra Credit: Dynamically insert search form here  
+                <!-- Extra Credit: Dynamically insert search form here  
         
           EXAMPLE - Search form:
 
@@ -25,12 +23,12 @@
           </label>
         
         -->
+            </header>
 
-    </header>
-    
-    <ul class="student-list">
+            <div class="no-results" style="display: none">No results found</div>
 
-      <!-- Dynamically insert students here
+            <ul class="student-list">
+                <!-- Dynamically insert students here
         
         EXAMPLE - Student list item:
 
@@ -46,13 +44,11 @@
         </li>
 
       -->
-        
-    </ul>
+            </ul>
 
-    <div class="pagination">
-      <ul class="link-list">
-
-        <!-- Dynamically insert pagination buttons here
+            <div class="pagination">
+                <ul class="link-list">
+                    <!-- Dynamically insert pagination buttons here
 
           EXAMPLE - Two pagination buttons, one with active class, one without:
             
@@ -64,12 +60,10 @@
           </li>
       
         -->
-
-      </ul>
-    </div>
-    
-  </div>
-  <script src="js/data.js"></script> 
-  <script src="js/script.js"></script>
-</body>
+                </ul>
+            </div>
+        </div>
+        <script src="js/data.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
