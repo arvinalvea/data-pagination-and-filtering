@@ -58,7 +58,7 @@ function addPagination(list) {
 
     // Adds "active" class to button that is click and removes "active" class from previously active button
     linkList.addEventListener("click", function (e) {
-        if ((e.target.tagName = "button")) {
+        if (e.target.tagName === "BUTTON") {
             let activeButton = document.querySelector(".active");
 
             activeButton.className = "";
